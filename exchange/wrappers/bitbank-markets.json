@@ -1,0 +1,23 @@
+{
+    "assets": [
+        "btc",
+        "bcc",
+        "xrp",
+        "ltc",
+        "eth"
+    ],
+    "currencies": [
+        "jpy"
+    ],
+    "markets": [{
+        "pair": [
+            "jpy",
+            "btc"
+        ],
+        "minimalOrder": {
+            "amount": 0.000001,
+            "price": 1,
+            "order": 1
+        }
+    }]
+}
