@@ -159,11 +159,8 @@ Trader.prototype.getTrades = function(since, callback, descending) {
     };
 
     var reqData = {
-        pair: 'btc_jpy',
+        pair: this.pair.toLowerCase(),
     };
-    // pair: 'btc_jpy', 			// required
-    // candleType: '1hour', 		// required
-    // yyyymmdd: '20180401', 
     if (since) {
         reqData.yyyymmdd = moment(since).format('YYYYMMDD')
     }

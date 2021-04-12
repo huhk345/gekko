@@ -1,23 +1,69 @@
 {
     "assets": [
-        "btc",
-        "bcc",
-        "xrp",
-        "ltc",
-        "eth"
+        "btc_",
+        "bcc_",
+        "xrp_",
+        "ltc_",
+        "eth_"
     ],
     "currencies": [
         "jpy"
     ],
-    "markets": [{
-        "pair": [
-            "jpy",
-            "btc"
-        ],
-        "minimalOrder": {
-            "amount": 0.000001,
-            "price": 1,
-            "order": 1
+    "markets": [
+        {
+            "pair": [
+                "jpy",
+                "btc_"
+            ],
+            "minimalOrder": {
+                "amount": 0.000001,
+                "price": 1,
+                "order": 1
+            }
+        },
+        {
+            "pair": [
+                "jpy",
+                "bcc_"
+            ],
+            "minimalOrder": {
+                "amount": 0.000001,
+                "price": 1,
+                "order": 1
+            }
+        },
+        {
+            "pair": [
+                "jpy",
+                "xrp_"
+            ],
+            "minimalOrder": {
+                "amount": 0.000001,
+                "price": 1,
+                "order": 1
+            }
+        },
+        {
+            "pair": [
+                "jpy",
+                "ltc_"
+            ],
+            "minimalOrder": {
+                "amount": 0.000001,
+                "price": 1,
+                "order": 1
+            }
+        },
+        {
+            "pair": [
+                "jpy",
+                "eth_"
+            ],
+            "minimalOrder": {
+                "amount": 0.000001,
+                "price": 1,
+                "order": 1
+            }
         }
-    }]
+    ]
 }
