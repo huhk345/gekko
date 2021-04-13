@@ -135,7 +135,7 @@ Trader.prototype.retry = function(method, args) {
         method.apply(this, args);
     }, wait);
 };
-
+let retryMap = {}
 Trader.prototype.getTrades = function(since, callback, descending) {
     var args = _.toArray(arguments);
     const processResults = (err, data) => {
@@ -159,10 +159,21 @@ Trader.prototype.getTrades = function(since, callback, descending) {
     };
 
     var reqData = {
-        pair: this.pair.toLowerCase(),
+        pair: this.pair.toLowerCase().replace('jpy', '_jpy'),
     };
+
+
     if (since) {
         reqData.yyyymmdd = moment(since).format('YYYYMMDD')
+    }
+    if (retryMap[reqData.yyyymmdd]) {
+        retryMap[reqData.yyyymmdd] = retryMap[reqData.yyyymmdd] + 1
+        if (retryMap[reqData.yyyymmdd] > 10) {
+            processResults(null, { data: { transactions: [] } })
+            return
+        }
+    } else {
+        retryMap[reqData.yyyymmdd] = 1;
     }
     console.log(reqData)
     let timoutFlag = false
